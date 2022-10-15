@@ -1,9 +1,8 @@
-import java.util.ArrayDeque;
-import java.util.List;
-import java.util.Queue;
-import java.util.Random;
+import java.util.*;
 
 public class Main {
+
+//    ДЗ 2 Задание 2
 
     private static final List<String> NAMES = List.of(
           "Иван Иванов",
@@ -40,6 +39,9 @@ public class Main {
         System.out.println("Вторая очередь: " + queue2);
 
 
+    //    ДЗ 2 Задание 2
+        System.out.println();
+        example();
 
     }
 
@@ -71,6 +73,22 @@ public class Main {
         int size = RANDOM.nextInt(MAX_SIZE + 1);
         for (int i = 0; i < size; i++) {
             queue.offer(NAMES.get(RANDOM.nextInt(NAMES.size())));
+        }
+    }
+
+    private static void example() {
+        List<List<String>> biDemArrList = new ArrayList<>();
+        for (int i = 0; i < 8; i++) {
+            biDemArrList.add(i, new ArrayList<>());
+            for (int j = 0; j < 8; j++) {
+                biDemArrList.get(i).add(j, (i + j) % 2 == 1 ? "●" : "◯");
+            }
+        }
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                System.out.print(biDemArrList.get(i).get(j) + " ");
+            }
+            System.out.println();
         }
     }
 }
